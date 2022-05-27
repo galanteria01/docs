@@ -14,8 +14,7 @@ In this guide, we will integrate **React Core** and **React UIKit** SDK into **R
 
 The UI of the application looks something like as shown below. And you can find source code of this app [here]().
 
-<img src="https://dyte-assets.s3.ap-south-1.amazonaws.com/guides/dyte-integrate-reactjs/integrate-dyte-reactjs.gif" alt="Image to display application UI" title="Image to display application UI" width="800"/>
-
+!['Application UI'](https://dyte-assets.s3.ap-south-1.amazonaws.com/guides/dyte-integrate-reactjs/integrate-dyte-reactjs.gif)
 
 ## Pre-requisite
 
@@ -42,7 +41,7 @@ To build this project, we will need to install few dependencies. Install those u
 
 Once you create the React app, the project structure will look something like this:
 
-<img src="https://dyte-assets.s3.ap-south-1.amazonaws.com/guides/dyte-integrate-reactjs/integrate-dyte-reactjs-project-structure.png" alt="Project structure UI" title="Project structure UI" width="800"/>
+![Project Structure](https://dyte-assets.s3.ap-south-1.amazonaws.com/guides/dyte-integrate-reactjs/integrate-dyte-reactjs-project-structure.png)
 
 - Index.JS : To setup initial application and launch.
 - App.JS : To setup application routes.
@@ -75,7 +74,7 @@ Once, we imported all components, let's setup routing for this app using React R
 
 ## Step 04: Create meeting
 
-<img src="https://dyte-assets.s3.ap-south-1.amazonaws.com/guides/dyte-integrate-reactjs/integrate-dyte-reactjs-welcome.png" alt="Welcome UI" title="Welcome UI" width="800" />
+![Creating Meeting](https://dyte-assets.s3.ap-south-1.amazonaws.com/guides/dyte-integrate-reactjs/integrate-dyte-reactjs-welcome.png)
 
 We use `Welcome.JS` file to create a React component called `Welcome` which allows users to create a Meeting.
 
@@ -137,7 +136,7 @@ const createMeetingHandler = async e => {
 
 ## Step 05: Add participants
 
-<img src="https://dyte-assets.s3.ap-south-1.amazonaws.com/guides/dyte-integrate-reactjs/integrate-dyte-reactjs-meeting.png" alt="Meeting created, add participant UI" title="Meeting created, add participant UI" width="800" />
+![Add Participant](https://dyte-assets.s3.ap-south-1.amazonaws.com/guides/dyte-integrate-reactjs/integrate-dyte-reactjs-meeting.png)
 
 Once the meeting is created, you can add participants in this meeting. Participants can have different roles or presets which you can define already. By default, 'host' or 'participant' roles are available. 
 Adding a participant is nothing but calling a REST API [Add Participant](https://docs.dyte.io/api/#/operations/addParticipant).
@@ -165,11 +164,12 @@ Create a React component called `Meeting` in `Meeting.js` file and use following
         navigate('/lobby', { state: { meetingId: meetingId, roomName: roomName, authToken: authToken, orgID: orgID } });
     }
 ```
-In above code, on success (HTTP 200), we will navigate the user to lobby, where user can select preferred video and audio devices and join the meeting. 
+
+In above code, on success (HTTP 200), we will navigate the user to lobby, where user can select preferred video and audio devices and join the meeting.
 
 ## Step 06: Join meeting in the Lobby
 
-<img src="https://dyte-assets.s3.ap-south-1.amazonaws.com/guides/dyte-integrate-reactjs/integrate-dyte-reactjs-lobby.png" alt="Meeting lobby UI" title="Meeting lobby UI" width="800" />
+![Join meeting](https://dyte-assets.s3.ap-south-1.amazonaws.com/guides/dyte-integrate-reactjs/integrate-dyte-reactjs-lobby.png)
 
 On this screen, we render `DyteClient` which represents a lobby (where users can wait, select preferred video & audio devices) and join the meeting room (actual meeting stage). 
 
@@ -199,7 +199,7 @@ return (<div>
 
 ## Step 07: Invite attendees
 
-<img src="https://dyte-assets.s3.ap-south-1.amazonaws.com/guides/dyte-integrate-reactjs/integrate-dyte-reactjs-stage.png" alt="Meeting room UI" title="Meeting room UI" width="800" />
+![Invite attendees](https://dyte-assets.s3.ap-south-1.amazonaws.com/guides/dyte-integrate-reactjs/integrate-dyte-reactjs-stage.png)
 
 In the same `Lobby.JS` file, let's write code to set browser URL to something which can be shared as invite and people can join the same meeting.
 
@@ -212,4 +212,4 @@ window.history.pushState('', 'meeting', meetingURL);
 
 React applications can be launched by command `npm start`. If everything is right and you have no compile errors, you should see the same output as shown below. You should be able to create a meeting, add participant and see the meeting room.
 
-<img src="https://dyte-assets.s3.ap-south-1.amazonaws.com/guides/dyte-integrate-reactjs/integrate-dyte-reactjs.gif" alt="Image to display application UI" title="Image to display application UI" width="800"/>
+!['Application UI'](https://dyte-assets.s3.ap-south-1.amazonaws.com/guides/dyte-integrate-reactjs/integrate-dyte-reactjs.gif)
